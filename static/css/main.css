@@ -2,6 +2,12 @@ html {
   scroll-behavior: smooth;
 }
 
+
+.begin_section{
+  background-image: "Teamlogo.png";
+  background-size: cover;
+}
+
 /* Animating dropdown navbar */
 .navbar .nav-item:not(:last-child) {
   margin-right: 35px;
@@ -121,7 +127,6 @@ h4 {
 
 h5 {
   padding: 0px 0px 12px 0px;
-  border-bottom: 4px solid #be1e2d;
   font-size: 1.5em;
   display: inline;
 }
@@ -262,6 +267,9 @@ h5 {
   flex: 50%;
 }
 
+.backcolorMint {
+  background-color:#D0F0C0;
+}
 
 .backcolorSeafoam {
   background-color: #F5FFFA;
@@ -273,6 +281,14 @@ h5 {
 
 .backcolorBauhausBlue {
   background-color: #367294;
+}
+
+.backcolorNiceYellow {
+  background-color: #F6D55C;
+}
+
+.backcolorPollution {
+  background-color: #BEBEBE;
 }
 
 
