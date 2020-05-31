@@ -271,7 +271,7 @@
                     <br>
                     <br>
 
-                    To better understand population concentrations, we gathered night light satellite data from NASA's Suomi-NPP's (National Polar-orbiting Partnership) VIIRS (Visible Infrared Imaging Radiometer Suite) instrument from the month of January 2020. However, we were not able to finish formatting and feeding this data into our model in time.
+                    To better understand population concentrations, we gathered night light satellite data from NASA's Suomi-NPP's (National Polar-orbiting Partnership) VIIRS (Visible Infrared Imaging Radiometer Suite) instrument from the month of January 2020. This data was also fed into the final model.
 
                     We also used mobility data from Google to supplement the information to better understand human movements and activities.
                   </p>
@@ -321,7 +321,10 @@
               </div>
             </div>
           </section>
-    
+          
+
+          
+
           <section class = "section border-t" id = method>
             <div class = "container">
               <div class = "row ">
@@ -330,12 +333,25 @@
                   <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Methodology <br></h3>
                   <br>
                   <br>
+                  <figure class = "figure">
+                    <img src = "workflow_chart_total.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> A flowchart depicting data sources and our process of creating the model and the interactive choropleth. Steps containing data from NASA/JAXA and other space agencies are filled in green, while boxes using data only from non-NASA data sources are filled in blue.. </figcaption>
+                  </figure>
+
+
+
+
                   <br>
-                  <p class> The spread of the coronavirus is extremely contagious, and current methods of social distancing and stay at home order can only flatten the curve so much.
-                     As states begin to reopen we want to examine places and activities where hot spots can form. 
+                  <br>
+                  <br>
+                  <p class>
+
+
                      Utilizing NASA and other open source data , we were able to determine the five largest categories to look at for hot spots. 
                      The data was read in using python. With the utilizing python functions we were able to merge the files into one large readable data file. That helped us create a good training model for machine learning.
                       We were also able to create a choropleth using leaflet javascript making an interactive map of places we consider as hot spots. This will allow us to understand what places to look at as hotspots as the regulations begin to loosen. 
+                    
+                    We began by filtering
                   </p>
                 </div>
 
@@ -544,6 +560,7 @@
               </div>
             </div>
 
+            <!-- Thanks to Sabrina as well, for helping to process some of the datasets. -->
               <!-- <div class="col">
                 <h5>Sabrina</h5>
                  <a href = "https://www.linkedin.com/in/sabrina-tobar-thommel/">Sabrina Tobar Thommel</a>
@@ -551,9 +568,11 @@
               </div> -->
 
             <div class = "row text-center">
-              <br>
-              <br>
-              <a href = "https://github.com/ggarfink/ggarfink.github.io" class="fab fa-github fa-5x" style = "text-decoration:none"></a>
+              <div class = "column">
+                <br>
+                <br>
+                <a href = "https://github.com/ggarfink/ggarfink.github.io" class="fab fa-github fa-5x" style = "text-decoration:none"></a>
+              </div>
             </div>
           </div>
         </body>
