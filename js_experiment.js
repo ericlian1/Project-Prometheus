@@ -107,6 +107,22 @@ L.geoJSON(state_data, {
     style: myStyle
 }).addTo(mymap);
 
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function(map) {
+    var div = L.DomUtil.create('div', 'info legend'),
+        levels = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
+        labels = [];
+
+    for (var i = 0; i < levels.length; ++i) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(levels[i] + 1) + '"></i> ' +
+            levels[i] + (levels[i + 1] ? '&ndash;' + levels[i + 1] + '<br>' : '+');
+    }
+    return div;
+}
+
+legend.addTo(mymap);
 //CODE THAT CAN BE USED TO SAVE JSON FILE IF NECESSARY
 // function saveText(text, filename) {
 //     var a = document.createElement('a');
