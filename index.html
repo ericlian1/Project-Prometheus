@@ -85,7 +85,7 @@
                   </li>
 
                   <li class="nav-item line_effect">
-                    <a class="nav-link" href="#contactMe" style = "text-decoration:none">Social Media</a>
+                    <a class="nav-link" href="#contact" style = "text-decoration:none">The Team</a>
                   </li>
 
                 </ul>
@@ -98,7 +98,7 @@
             <img src = "Teamlogo.png" class = "wideimg img-fluid fadeIn">
           </section>
           
-          <section class = "section backcolorOffwhite" id = "intro">
+          <section class = "section backcolorMist" id = "intro">
             <div class = "container">
               
 
@@ -120,28 +120,51 @@
             </div>
           </section>
 
-          <section class = "section border-t backcolorMint" id = env>
+          <section class = "section border-t " id = env>
             <div class = "container">
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Environment <br></h2>
-                  <p class> Many people assume that with higher temperature, the less effective the coronavirus will be similar to the common cold. 
-                    The cold is more prevalent in the winter comprare to the summer. But that may not be the case for this virus. Research done by scientists at Harvard T.H. Chan School of public health have published online journal articles looking at the outlook of the coronavirus during different seasons. 
-                    In every model that they predicted, the warm weather did not halt transmission of the virus. (Powell, 2020) This is something very dangerous, because it is a thought that many Americans and government officials have before. 
-                    They may open up a state prematurely believing that because of the warm weather people do not need to be concerned about the virus spreading. 
-                    Any place where social distancing cannot happen properly during the warm temperatures are places to be looking at for hot spot locations.In addition, research done by scientists in China has proved something similar with regards to the association of the coronavirus with ambient temperatures. 
-                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline when the temperature increases. (Xie, 2020). With that in mind crowded cities should be looked at more as a hotspot because the distance between each person is minimal and the spread of the diseases is still extremely common. 
+                  <p class> Research done by scientists at Harvard T.H. Chan School of public health suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
+                    Research done by scientists in China also supports this hypothesis.
+                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline when the temperature increases. (Xie, 2020).
+                    These results are particularly concerning, as many government officials rely on warmer weather to "mitigate" the disease's infectivity. 
+                    <br>
+                    <br>
+                    As a result, one may hypothesize that that many may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
+                    
+                    <br>
+                    <br>
 
+                    Precipitation data was also included in our model, as seasonal variations in temperature and precipitation (e.g rainfall) as well as
+                    rapid changing weather variability can exert strong pressures on infectious population dynamics. (Chiyomaru and Takemoto, 2020)
+
+                    <br>
+                    <br>
+
+                    Global temperature and UV data was gathered from NASA's MODIS (Moderate Resolution Imaging Spectroradiometer) instrument web data portal.
+                    Global precipitation data was gathered by the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer). The data was collected from JAXA's G-Portal.
+                    <br>
+                    <br>
+                    Data for most days had missing data; this was handled by filling the data in with the next available time interval.
+                  
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
                   <div class = "hideme">
                     <figure class = "figure">
-                      <img src = "Teamlogo.png" class = "word-chart img-fluid fadeIn">
+                      <img src = "static/images/map_temp.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A weather map depicting a day's worth of global temperature data from NASA on 2020-02. Note: The uncolored spots indicate missing data.</figcaption>
+                    </figure>
+
+                    <br>
+                    <figure class = "figure">
+                      <img src = "static/images/map_precip.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A weather map visualizing a day's worth of global precipitation data gathered from JAXA on 2020-01-26. Note: The uncolored spots indicate missing data. </figcaption>
                     </figure>
                   </div>
-                </div>                  
+                </div>                   
               </div>
             </div>
           </section>
@@ -152,12 +175,10 @@
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Pollution <br></h2>
-                  <p class> The level of pollution each country has produced is the most  dramatic change caused by the coronavirusLevels have dropped significantly after this pandemic began. 
-                      This is caused by factories closing down and just in general a lower movement by people. 
-                      Following social distancing rules and stay at home order, it  has created a better environment for people. 
+                  <p class> T
                       Pollution levels are a very important factor that needs to be considered because when there are high levels of pollution, there is also a high exertion of NO2 gas and nitrate which is extremely dangerous to humans. 
                       Nitrate has the ability to penetrate deep into the lungs and then into the bloodstream causing people to get heart problems and other fatal diseases. (Hernandez, 2020 )This is a determinate especially during this pandemic. 
-                      The corona virus is known to have a low mortality rate ranging between 5.9 % to 16.3% (Hopkins, 2020). But the level increases with other diseases considered. Levels can spike up to 41% which makes it a very important factor to consider. 
+                      Coronavirus is known to have a low mortality rate ranging between 5.9 % to 16.3% (Hopkins, 2020). But the level increases with other diseases considered. Levels can spike up to 41% which makes it a very important factor to consider. 
                       Below there are graphs attached that show dramatic changes with countries after the pandemic. As stores and factories begin to reopen, we need to monitor the amount of pollutant released or else the second wave of the coronavirus may be worse than the original having a higher fatality rate.
                   </p>
                 </div>
@@ -437,7 +458,7 @@
               </div>
             </div>
 
-            <div class = "row text-center" id = "contactMe">
+            <div class = "row text-center" id = "contact">
  
               <div class="col">
                 <h5>Alex</h5>
@@ -465,6 +486,8 @@
 
               <div class="col">
                 <h5>Gabe</h5>
+                <br>
+                <img src = "static/images/gabe_photo.jfif" class = "profile-pic">
                 <br>
               </div>
 
