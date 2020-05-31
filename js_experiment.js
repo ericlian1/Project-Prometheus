@@ -6,7 +6,7 @@
 
 // import { geoJSON } from "leaflet";
 
-var mymap = L.map('mapid').setView([39.0119, -98.4842], 4);
+var mymap = L.map('interactive-map').setView([39.0119, -96.4842], 4);
 var mapboxAccessToken = 'pk.eyJ1IjoiZ2dhcmZpbmsiLCJhIjoiY2thc25uOGVvMDBydTJxbjQ1YnFiZ3lnMCJ9.9sEk0vjedqQplRO3bx-L8w';
 var covid_deaths;
 var geoJSON;
