@@ -433,7 +433,7 @@ h5 {
 }
 
 .red_grad_bgd {
-  background: linear-gradient(90deg,#A71D31,  #be1e2d, #3F0D12)
+  background:  linear-gradient(315deg, #fdb813 0%, #788cb6 74%)
 }
 
 .col_fact {
@@ -457,7 +457,7 @@ h5 {
 
 .bottomBorderRedgrad {
   border-bottom: 4px solid;
-  border-image: linear-gradient(90deg,#A71D31,  #be1e2d, #3F0D12) 1;
+  border-image: linear-gradient(90,#ffffb5,  #247ba0, #367294);
 }
 
 .hideme
