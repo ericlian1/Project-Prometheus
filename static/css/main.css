@@ -468,7 +468,7 @@ h5 {
 
 /* Loader code */
 
-/* Center the loader */
+/* Center the loader
 #loader {
   position: absolute;
   left: 50%;
@@ -507,7 +507,7 @@ h5 {
 }
 
 /* Add animation to "page content" */
-.animate-bottom {
+/* .animate-bottom {
   position: relative;
   -webkit-animation-name: animatebottom;
   -webkit-animation-duration: 1s;
@@ -523,7 +523,7 @@ h5 {
 @keyframes animatebottom { 
   from{ bottom:-100px; opacity:0 } 
   to{ bottom:0; opacity:1 }
-}
+} */
 
 #myDiv {
   display: none;
