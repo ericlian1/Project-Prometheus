@@ -50,8 +50,8 @@ function highlightFeature(e) {
     var layer = e.target;
 
     layer.setStyle({
-        weight: 3,
-        color: '#2ca25f',
+        weight: 4,
+        color: '#ffffff',
         fillOpacity: 0.7
     });
 
