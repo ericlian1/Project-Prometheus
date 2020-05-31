@@ -281,7 +281,7 @@
             </div>
           </section>
 
-          <section class = "section border-t backcolorMist" id = gov>
+          <section class = "section border-t" id = gov>
             <div class = "container">
               <div class = "row ">
                 
@@ -352,7 +352,7 @@
                     The hotspot index for a county is defined as follows:
                     <br>
                     <br>
-                    HotSpot Index = log_{10} ((IR) * 0.004 + (MR) * 0.004 + GP * C * 0.001 + 1)
+                    HotSpot Index = ln ((IR) * 0.004 + (MR) * 0.004 + GP * C * 0.001 + 1)
                     <br>
                     <br>
                     IR = Incidence rate (cases per 100,000 people)
@@ -395,6 +395,12 @@
                     <br>
 
                     After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
+
+                    <h5> Applications & Future Work </h5>
+                    <br>
+                    
+                    The Choropleth offers exciting applications and insight into the propagation of Coronavirus. 
+                    Our hope is that the predictions of hot spot indices from the LSTM machine learning model
                   </p>
                 </div>
 
@@ -530,22 +536,23 @@
             <div class = "counting-sec red_grad_bgd">
               <div class = "inner-width">
                 <div class="col-md-3 col_fact">
-                  <div class = "num">9</div>
-                  Sources
-                </div>
-                <div class="col-md-3 col_fact">
-                  <div class = "num">5</div>
-                  Data Types
-                  <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
-                </div>
-                <div class="col-md-3 col_fact">
-                  <div class = "num">40</div>
+                  <div class = "num">44</div>
                   Features
                 </div>
                 <div class="col-md-3 col_fact">
                   <div class = "num">1</div>
                   Long Short Term Memory Machine Learning Model
                 </div>
+                <div class="col-md-3 col_fact">
+                  <div class = "num">5</div>
+                  % Average Error Rate for one day Prediction
+                  <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
+                </div>
+                <div class="col-md-3 col_fact">
+                  <div class = "num">5</div>
+                  Group Members
+                </div>
+                
               </div>  
             </div>
           </div>
@@ -558,7 +565,7 @@
           <div class = "section container">
             
             <div class = "row text-center">
-              <div class = "col">
+              <div class = "col" id = "contact">
                 <h3>The Team</h3>
                 <br>
                 <br>
