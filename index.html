@@ -117,8 +117,9 @@
                   <p class = "text-left mt-1 ml-1">
                     Part of our mysterious galaxy encompasses satellites that roam through the earth gathering billions of data points. 
                     From the invention of the first computer, technology has drastically improved our collective ability to understand and identify complex relationships.  
-                    Utilizing big data, artificial intelligence, fcc data api and various technology, we created predictive models to help to empower those in need by giving us insight into the specific populations and regions needing the most amount of resources and the best way to deploy the limited amount of resources the earth has. 
+                    Utilizing big data, NASA & JXA satellite data, and machine learning, we created predictive models to help to empower those in need by giving us insight into the specific populations and regions needing the most amount of resources and the best way to deploy the limited amount of resources the earth has. 
                     By focusing on critical trends in pollution, government policies, demographics / social and economic status,  weather and pre-existing conditions, we can find the most effective way of deploying their sources we have to effectively combat Coronavirus. Right now is the time, where we create a lasting impact to sustain our Earth.
+                    The purpose of the Project Prometheus is predicting the areas most impacted by Coronavirus spread using machine learning on a collection of satellite and earth-based data.
                     </p>
                 </div>
               </div>               
@@ -225,15 +226,7 @@
                     <br>
                     <br>
                     Additional health information such as life expectancy, poor mental health days was also included in our model, gathered from the Robert Wood Johnson Foundation program, a large philanthropic foundation.
-<!-- 
-                    The mortality rate increases with people that have pre-existing conditions.
-                    45.4% of people with complications of the coronavirus typically come from people who have previous conditions (Cardiovascular disease, Cancer, Diabetes). (Adams, 2020) · 
-                    In particular, the 7 risk factors of smoking, sedentary lifestyle, obesity, diabetes, hypertension, high cholesterol, and inadequate fruit and vegetable consumption together contributed to an average of 41.4% of the burden of 5 of the 6 chronic conditions used in our study. (Adams, 2020)
-                    This makes a large population of people more susceptible to the fatalities of the coronavirus. In America, the level of Obesity is the highest in the world, making the people in the US more fatal to the coronavirus. 
-                    “More than 2 in 3 adults were considered to be overweight or have obesity” “About 1 in 6 children and adolescents ages 2 to 19 were considered to have obesity.”(Ogden, 2020)
-                     With such high levels of people being obese in America, if everyone got infected by the corona virus, it would be extremely deadly and cause hospital to over flow again. 
-                     These are places where the government needs to look at as hot spots so that the American population could be protected against this virus before it becomes deadly. Also as people get older, they begin to have more diseases associated with them including heart problems, cancer and much more, making it imperative for us to access them as hot spots. 
-                   -->
+
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
@@ -265,14 +258,11 @@
                     <br>
 
                     In addition to race, we also sourced data for %rural, % severe housing problems, % ethnicities, etc. and fed it into our model. We sourced this information from the Robert Wood Johnson Foundation program.
-                   
-                    Poverty and unemployment data was also sourced from the United States Department of Agriculture (USDA) Economic Research Service.
 
                     <br>
                     <br>
 
                     To better understand population concentrations, we gathered night light satellite data from NASA's Suomi-NPP's (National Polar-orbiting Partnership) VIIRS (Visible Infrared Imaging Radiometer Suite) instrument from the month of January 2020. This data was also fed into the final model.
-
                     We also used mobility data from Google to supplement the information to better understand human movements and activities.
                   </p>
                 </div>
@@ -347,11 +337,64 @@
                   <p class>
 
 
-                     Utilizing NASA and other open source data , we were able to determine the five largest categories to look at for hot spots. 
-                     The data was read in using python. With the utilizing python functions we were able to merge the files into one large readable data file. That helped us create a good training model for machine learning.
-                      We were also able to create a choropleth using leaflet javascript making an interactive map of places we consider as hot spots. This will allow us to understand what places to look at as hotspots as the regulations begin to loosen. 
-                    
-                    We began by filtering
+                    Our first major task was to process NASA, JAXA, and other open source data containing measurements regarding temperature, precipitation, night light radiance, etc. across a collection of portals and file formats (h5, hd5, he5, tiff, csv).
+                    Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
+                    <br>
+                    <br>
+                    After merging the data together, the data was "cleaned" by filling in all missing values with the "next available data."
+                    Following the data cleaning process, the data was split into training and evaluation/testing subsets (80% and 20%, respectively).
+                    Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
+
+                    The model was then specified to utilize the previous week's worth (seven days) of input to predict the next day's "hot spot index".
+
+                    This value is a number that we, as a team, defined, aiming to provide insight into the infectivity, lethality, and overall spread of the virus.
+
+                    The hotspot index for a county is defined as follows:
+                    <br>
+                    <br>
+                    HotSpot Index = log_{10} ((IR) * 0.004 + (MR) * 0.004 + GP * C * 0.001 + 1)
+                    <br>
+                    <br>
+                    IR = Incidence rate (cases per 100,000 people)
+                    <br>
+                    MR = Mortality Rate (Deaths in county / Population in county)
+                    <br>
+                    GP = Growth Percentage (New cases / Yesterday's total cases)
+                    <br>
+                    C = Total Confirmed Cases up to Yesterday
+
+                    <br>
+                    <br>
+                    Where 0.004, 0.001, and 1 are hard-coded inputs to the model.
+
+                    A Long Short Term Memory (LSTM) model from Tensorflow was then used to train and test the model.
+
+                    Below is a list of all the features used to train our model:
+                    <br>
+                    <br>
+                    <code>['FIPS', 'Confirmed', 'Deaths', 'Population', 'IncidenceRate',
+                    'NewCases', 'MortalityRate', 'LST_Day', 'LST_Night',
+                    'Mask Mandates', 'Stay-at-Home Orders', 'Travel Restrictions',
+                    'Precipitation', 'UV Index',
+                    'retail_and_recreation_percent_change_from_baseline',
+                    'grocery_and_pharmacy_percent_change_from_baseline',
+                    'parks_percent_change_from_baseline',
+                    'transit_stations_percent_change_from_baseline',
+                    'workplaces_percent_change_from_baseline',
+                    'residential_percent_change_from_baseline', 'Life Expectancy',
+                    '% Adults with Diabetes', '% Uninsured.1',
+                    'Median Household Income', '% 65 and over', '% Black', '% Asian',
+                    '% Native Hawaiian/Other Pacific Islander', '% Hispanic',
+                    '% Non-Hispanic White', '% Rural', '% Fair or Poor Health',
+                    '% Smokers', '% Adults with Obesity', 'Food Environment Index',
+                    'Primary Care Physicians Ratio', '% Vaccinated', '% Some College',
+                    '% Severe Housing Problems', 'ColumnAmountNO2',
+                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index',
+                    'Hotspot Index_rank']</code>
+                    <br>
+                    <br>
+
+                    After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
                   </p>
                 </div>
 
@@ -400,7 +443,7 @@
 
                   <figure class = "figure">
                     <!-- If not working, turn off any adblockers and/or try using a different browser -->
-                    <iframe height="100%" class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
+                    <iframe height="200%" class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
                     <figcaption class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</figcaption>
                   </figure>
                 </div>
