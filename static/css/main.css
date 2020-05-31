@@ -2,10 +2,29 @@ html {
   scroll-behavior: smooth;
 }
 
-
-.begin_section{
+.bg { 
+  /* The image used */
   background-image: "Teamlogo.png";
+
+  /* Full height */
+  height: 50%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
+}
+
+.wideimg {
+    /* The image used */
+    /* Full height */
+    height: auto;
+    width: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Animating dropdown navbar */
@@ -231,6 +250,10 @@ h5 {
   width: 640px;
   height: 480px;
   border-radius: 50%;
+}
+
+.section-no-padding {
+  padding: 0 0;
 }
 
 .section {
@@ -488,4 +511,16 @@ h5 {
 #myDiv {
   display: none;
   text-align: center;
+}
+
+@media only screen and (max-width: 920px) {
+  .inner-container{
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .inner-container{
+    margin-top: 150px;
+  }
 }
