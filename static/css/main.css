@@ -252,6 +252,12 @@ h5 {
   border-radius: 50%;
 }
 
+.word-chart{
+  width: 640px;
+  height: 480px;
+  border-radius: 50%;
+}
+
 .section-no-padding {
   padding: 0 0;
 }
@@ -527,4 +533,10 @@ h5 {
   .inner-container{
     margin-top: 150px;
   }
+}
+
+.profile-pic{
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
 }
