@@ -66,8 +66,8 @@
                     <div class = "dropdown-menu" aria-labelledby="dropdownMenu2">
                       <a class = "dropdown-item" href = "#env">Environment</a>
                       <a class = "dropdown-item" href = "#pollut">Pollution</a>
-                      <a class = "dropdown-item" href = "#dis">Diseases</a>
-                      <a class = "dropdown-item" href = "#dem">Demographics</a>
+                      <a class = "dropdown-item" href = "#dis">Disease</a>
+                      <a class = "dropdown-item" href = "#dem">Social</a>
                       <a class = "dropdown-item" href = "#gov">Government</a>
                     </div>
                   </li>
@@ -95,7 +95,7 @@
 
           
           <section class = "section-no-padding">
-            <img src = "Teamlogo.png" class = "wideimg img-fluid fadeIn">
+            <img src = "MRC.png" class = "wideimg img-fluid fadeIn">
           </section>
           
           <section class = "section backcolorMist" id = "intro">
@@ -169,23 +169,32 @@
             </div>
           </section>
 
-          <section class = "section border-t backcolorPollution" id = pollut>
+          <section class = "section border-t" id = pollut>
             <div class = "container">
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Pollution <br></h2>
-                  <p class> T
-                      Pollution levels are a very important factor that needs to be considered because when there are high levels of pollution, there is also a high exertion of NO2 gas and nitrate which is extremely dangerous to humans. 
-                      Nitrate has the ability to penetrate deep into the lungs and then into the bloodstream causing people to get heart problems and other fatal diseases. (Hernandez, 2020 )This is a determinate especially during this pandemic. 
-                      Coronavirus is known to have a low mortality rate ranging between 5.9 % to 16.3% (Hopkins, 2020). But the level increases with other diseases considered. Levels can spike up to 41% which makes it a very important factor to consider. 
-                      Below there are graphs attached that show dramatic changes with countries after the pandemic. As stores and factories begin to reopen, we need to monitor the amount of pollutant released or else the second wave of the coronavirus may be worse than the original having a higher fatality rate.
+                  <p class> 
+                      As Coronavirus has spread, there has also been an observable decrease in pollution due to reduced human activity (e.g less commuters on the road and less people going to work).
+
+                      However, as states and regions relax restrictions and social distancing, human activity increases, resulting in more pollution.
+
+                      NO2, or Nitrogen Dioxide, is a common byproduct of industrial activity that is hazerdous to human health. As a result, it can provide a fairly accurate measure of industrial activity.
+
+                      Areas with higher levels of pollution often also have a greater percentage of the population with preexisting conditions, increasing Coronavirus' severity/lethality.
+                      As a result, NO2 is a good metric for estimating economic activity and measuring the susceptibility of populations in certain regions to Coronavirus.
+                      <br>
+                      <br>
+                      We sourced the NO2 data from OMINO2 (Ozone Monitoring Instrument) and acquired it from the EarthDATA portal.
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
                   <div class = "hideme">
+                  
                     <figure class = "figure">
-                      <img src = "Teamlogo.png" class = "word-chart img-fluid fadeIn">
+                      <img src = "static/images/bar_chart.png" class = "img-fluid fadeIn">
+                      <figcaption class="figure-caption text-center"> A bar chart depicting processed NO2 from NASA data on 03-04-2020 of the counties with the highest levels. </figcaption>
                     </figure>
                   </div>
                 </div>                  
@@ -198,14 +207,26 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Diseases <br></h2>
-                  <p class> The mortality rate increases with people that have pre-existing conditions.
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Disease <br></h2>
+
+                  <p class> 
+
+                    We also fed in historical numer of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
+
+                    We gathered this information via Johns hopkins University's COVID-19 "USCounties_time" records.
+
+                    <br>
+
+                    Additional health information such as life expectancy, poor mental health days was also included in our model, gathered from the Robert Wood Johnson Foundation program, a large philanthropic foundation.
+<!-- 
+                    The mortality rate increases with people that have pre-existing conditions.
                     45.4% of people with complications of the coronavirus typically come from people who have previous conditions (Cardiovascular disease, Cancer, Diabetes). (Adams, 2020) · 
                     In particular, the 7 risk factors of smoking, sedentary lifestyle, obesity, diabetes, hypertension, high cholesterol, and inadequate fruit and vegetable consumption together contributed to an average of 41.4% of the burden of 5 of the 6 chronic conditions used in our study. (Adams, 2020)
                     This makes a large population of people more susceptible to the fatalities of the coronavirus. In America, the level of Obesity is the highest in the world, making the people in the US more fatal to the coronavirus. 
                     “More than 2 in 3 adults were considered to be overweight or have obesity” “About 1 in 6 children and adolescents ages 2 to 19 were considered to have obesity.”(Ogden, 2020)
                      With such high levels of people being obese in America, if everyone got infected by the corona virus, it would be extremely deadly and cause hospital to over flow again. 
                      These are places where the government needs to look at as hot spots so that the American population could be protected against this virus before it becomes deadly. Also as people get older, they begin to have more diseases associated with them including heart problems, cancer and much more, making it imperative for us to access them as hot spots. 
+                   -->
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
@@ -224,12 +245,28 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Demographics <br></h2>
-                  <p class> Africian Americans and the hispanic population have a much higher death rate compared to the other races. 
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Social <br></h2>
+                  <p class> 
+                    
+                    Minorities, especially African-Americans, have an on-average higher death rate compared to other races.
                     “African American persons (92.3 deaths per 100,000 population) and Hispanic/Latino persons (74.3) that were substantially higher than that of white (45.2) or Asian (34.5) persons.”(IHME, 2020). 
-                    The main reason why the African American and the hispanic populations have such high mortality rates compared to the other populations is due to the living conditions that they live in and the jobs that most of the minority population work in. 
-                    Nearly a quarter of the service industry is employed by hispanic and black workers.Also due to the low paying jobs the minority population are forced to live close to each other causing a large issue especially when we are trying to maintain social distancing. 
-                    In addition, most of the professions that the minority communities have does not include health insurance or paid time off making it very hard for them to seek treatment. (CDC). This makes the minority population a place to look at when we are seeking for hot spots.
+                    This trend may be attributed to their living conditions and neighborhoods. As they tend to reside in more densely populated areas and are thus may be more susceptible to transmission, making it hard to social distance people from one another. 
+                    In addition, most of the professions that the minority communities have does not include health insurance or paid time off making it very hard for them to seek treatment. (CDC).
+                    As a result, social demographics play an important role in identifying hot spots.
+
+                    <br>
+                    <br>
+
+                    In addition to race, we also sourced data for %rural, % severe housing problems, % ethnicities, etc. and fed it into our model. We sourced this information from the Robert Wood Johnson Foundation program.
+                   
+                    Poverty and unemployment data was also sourced from the United States Department of Agriculture (USDA) Economic Research Service.
+
+                    <br>
+                    <br>
+
+                    To better understand population concentrations, night light satellite data from NASA's Suomi-NPP's (National Polar-orbiting Partnership) VIIRS (Visible Infrared Imaging Radiometer Suite) instrument was fed into our model, specifically from the month of January 2020.
+
+                    We also used mobility data from Google to supplement the information to better understand human movements and activities.
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
@@ -249,12 +286,14 @@
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government <br></h2>
-                  <p class> In the news, we see residents of each state beginning to protest against the stay at home orders and states beginning to reopen. 
-                    With Georgia being one of the first states to reopen, health officials are afraid that if we open the states up too quickly we can undo everything we have done to flatten the curve. 
-                    A good example is with Japan. They had a great containment of the corona virus at first, but after lifting the restriction too quickly they were forced to shut the island down for a second time due to a rise in the second wave of coronavirus cases. (Leonard, 2020).
-                     The economy is in a very tough shape right now causing many governors to overlook some of the criteria for reopening. 31 out of the 50 states have already begun partial reopening causing a spike in the model for the total amounts of deaths due to the coronavirus. 
-                     The projected amount of deaths increased from 77,000 to 131,000 after states began to reopen. Shown in the university of Washington Health Metrics and Evaluation. (George Washington University,2020). Some partial reopening includes reopening places where social distancing is possible like Zoos and parks.
-                      But as places like the gym, or the movie theater begins to reopen, it would be much harder to maintain social distancing. With the data that NASA and other agencies have provided, we can examine closely the states that have had a looser restriction in order to provide resources to the states that need it the most.
+                  <p class>  States are slowly re-opening, with Georgia being one of the first.
+                    However, health officials are afraid that if we open the states up too quickly may undo everything everyone has done to flatten the curve. 
+                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restriction too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
+                    The economy is in a very tough shape right now causing many governors to overlook some of the criteria for reopening. 31 out of the 50 states have already begun to partially reopen, causing a resurgence in the total amounts of deaths due to Coronavirus. 
+
+                    We sourced Government action data from multistate.us, which provides a COVID-19 Policy data at the state level.
+                     
+                    Thus, government restrictions are an important input to the model.
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
@@ -277,7 +316,7 @@
                   <br>
                   <br>
                   <br>
-                  <p class> The spread of the coronavirus is extremely contagious, and the current methods of social distancing and stay at home order can only flatten the curve so much.
+                  <p class> The spread of the coronavirus is extremely contagious, and current methods of social distancing and stay at home order can only flatten the curve so much.
                      As states begin to reopen we want to examine places and activities where hot spots can form. 
                      Utilizing NASA and other open source data , we were able to determine the five largest categories to look at for hot spots. 
                      The data was read in using python. With the utilizing python functions we were able to merge the files into one large readable data file. That helped us create a good training model for machine learning.
@@ -298,8 +337,8 @@
           </section>
     
           <section class = "section backcolorNicewhite" id = "models">
-            <div class = "container">
-              <div class = "row text-center">
+            <div class = "container mb-1">
+              <div class = "row text-center mb-5">
                 <div class="col-md-12 text-center">
                   <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Interactive Models <br> </h3>
                   <br>
@@ -317,25 +356,9 @@
                   <br>
                   <br>
                   <!-- Coronavirus Interactive Map -->
-          <!DOCTYPE html>
-          <html lang = "en-US" dir = "Itr">
-              <head>
-                <title>Coronavirus Interactive Map</title>
-                <style>
-                  iframe{
-                    width : 500px;
-                    height: 300px;
-                    margin-left: auto;
-                    margin-right: auto;
-                  }
-                </style>
-              </head>
-              <body>
-          <iframe src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
-              </body>
-          </html>
-                </div>
-    
+
+                  <iframe src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
+              </div>
               </div>
             </div>
           </section>
@@ -367,9 +390,6 @@
                         <br>
                         <br>
                           G. (2020). COVID-19 Community Mobility Report. Retrieved May 30, 2020, from https://www.google.com/covid19/mobility/;
-                        <br>
-                        <br>
-                          Hernandez, M. (2020). This is the effect coronavirus has had on air pollution all across the world. Retrieved May 30, 2020, from https://www.weforum.org/agenda/2020/04/coronavirus-covid19-air-pollution-enviroment-nature-lockdown/;
                         <br>
                         <br>
                           IHME: COVID-19 Projections. (2020, May 26). Retrieved May 29, 2020, from https://covid19.healthdata.org/united-states-of-america;
