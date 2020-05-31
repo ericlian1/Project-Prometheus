@@ -65,7 +65,7 @@ function resetHighlight(e) {
 }
 
 function onClickSettings(e) {
-    mymap.fitBounds(e.target.getBounds().pad(.75));
+    mymap.fitBounds(e.target.getBounds().pad(2.5));
 }
 
 function onEachFeature(feature, layer) {
