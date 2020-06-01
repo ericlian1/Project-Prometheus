@@ -68,6 +68,14 @@
                     <a class="nav-link"  href="index.html#intro" style = "text-decoration:none">Home<span class="sr-only">(current)</span></a>
                   </li>
 
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#models" style = "text-decoration:none">Interactive Models</a>
+                  </li>
+
+                  <li class="nav-item line_effect">
+                    <a class="nav-link" href="#method" style = "text-decoration:none">Methodology</a>
+                  </li>
+
                   <li class="nav-item dropdown line_effect">
                     <a class="nav-link dropdown-toggle" href="#ds" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Data Sources
@@ -81,14 +89,6 @@
                     </div>
                   </li>
       
-                  <li class="nav-item line_effect">
-                    <a class="nav-link" href="#method" style = "text-decoration:none">Methodology</a>
-                  </li>
-
-                  <li class="nav-item line_effect">
-                    <a class="nav-link" href="#models" style = "text-decoration:none">Interactive Models</a>
-                  </li>
-
                   <li class="nav-item line_effect">
                     <a class="nav-link" href="#citation" style = "text-decoration:none">Citations</a>
                   </li>
@@ -104,12 +104,8 @@
           
           <section class = "section backcolorMist" id = "intro">
             <div class = "container">
-              
-
-              
-
               <!-- Introduction-->
-              <div class = "row">
+              <div class = "row" , style="background-image: url('static/images/MRC.png');background-size: cover;">
                 <div class = "col-lg">
                   <h2> Project Prometheus </h2>
                   <p class = "text-left mt-1 ml-1">
@@ -132,7 +128,7 @@
                   <br>
                   <br>
 
-                  <h5> Interactive LSTM MAP </h5>
+                  <h5> Interactive MAP of Hotspot Index from LSTM Model Prediction</h5>
                   <br>
                   <br>
                   <br>
@@ -144,8 +140,7 @@
                     <script type='text/javascript' src= 'js_experiment.js'></script>
                   </div>
                   <br>
-                  <p>The above graph is based on the hotspot index, which describes how much of a hotspot
-                    the current location should be on 05/27/2020 (as this is based on data from 05/06/2020-05/20/2020).</p>
+                  <p class="figure-caption text-center">The above graph shows the model's prediction of hotspot index (a metric we created to describe how much of a hotspot a county is) on 05/27/2020, using data from 05/06/2020-05/20/2020.</p>
                   <br>
                   <br>
                   <br>
@@ -156,11 +151,11 @@
                   <br>
                   <!-- Coronavirus Interactive Model -->
 
-                  <figure class = "figure" style= "height:500 width: 700px">
+                  <div style= "height:500 width: 700px">
                     <!-- If not working, turn off any adblockers and/or try using a different browser -->
                     <iframe class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
-                    <figcaption class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</figcaption>
-                  </figure>
+                    <p class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</p>
+                  </div>
                   
                   <figure class = "figure">
                     <img src = "static/images/pert_14_7_single.png" class = "img-fluid fadeIn">
@@ -171,6 +166,104 @@
                     <figcaption class="figure-caption text-center"> This pie chart shows the permutation effect for each of the feature as a percentage of the toal sum of effects. The permutation is done by randomly shuffling each feature. The higher the percentage, the higher the error will increase when the feature is permuted, which might imply more importance to the model's prediction.</figcaption>
                   </figure>
                 </div>
+              </div>
+            </div>
+          </section>
+
+           <section class = "section border-t" id = method>
+            <div class = "container">
+              <div class = "row ">
+                
+                <div class = "col-lg text-left mt-1 ml-1 text-center">
+                  <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Methodology <br></h3>
+                  <br>
+                  <br>
+                  <figure class = "figure">
+                    <img src = "workflow_chart_total.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> A flowchart depicting data sources and our process of creating the model and the interactive choropleth. Steps containing data from NASA/JAXA and other space agencies are filled in green, while boxes using data only from non-NASA data sources are filled in blue.. </figcaption>
+                  </figure>
+
+
+
+
+                  <br>
+                  <br>
+                  <br>
+                  <p class>
+
+
+                    Our first major task was to process NASA, JAXA, and other open source data containing measurements regarding temperature, precipitation, night light radiance, etc. across a collection of portals and file formats (h5, hd5, he5, tiff, csv).
+                    Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
+                    <br>
+                    <br>
+                    After merging the data together, it was "cleaned" by filling in all missing values with the "next available data."
+                    Following the data cleaning process, it was split into training and evaluation/testing subsets (80% and 20%, respectively).
+                    Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
+
+                    The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
+
+                    This "hot spot index" is a number that we, as a team, defined, aiming to characterize into the infectivity, lethality, and overall spread of the virus.
+
+                    The hotspot index for a county is defined as follows:
+                    <br>
+                    <br>
+                    HotSpot Index = ln ((IR) * 0.003 + (MR) * 0.003 + GP * 0.002 + ln(C + 1) * 0.002 + 1))
+                    <br>
+                    <br>
+                    IR = Incidence rate (cases per 100,000 people)
+                    <br>
+                    MR = Mortality Rate (Deaths in county / Population in county)
+                    <br>
+                    GP = Growth Percentage (New cases / Past total cases)
+                    <br>
+                    C = Total Confirmed Cases up to Yesterday
+
+                    <br>
+                    <br>
+                    Where 0.003, 0.002, and 1 are hard-coded inputs to the model.
+
+                    A Long Short Term Memory (LSTM) model from Tensorflow was then used to train and test the model.
+
+                    Below is a list of all the features used to train our model:
+                    <br>
+                    <br>
+                    <code>['FIPS', 'Confirmed', 'Deaths', 'Population', 'IncidenceRate',
+                    'NewCases', 'MortalityRate', 'LST_Day', 'LST_Night',
+                    'Mask Mandates', 'Stay-at-Home Orders', 'Travel Restrictions',
+                    'Precipitation', 'UV Index',
+                    'retail_and_recreation_percent_change_from_baseline',
+                    'grocery_and_pharmacy_percent_change_from_baseline',
+                    'parks_percent_change_from_baseline',
+                    'transit_stations_percent_change_from_baseline',
+                    'workplaces_percent_change_from_baseline',
+                    'residential_percent_change_from_baseline', 'Life Expectancy',
+                    '% Adults with Diabetes', '% Uninsured.1',
+                    'Median Household Income', '% 65 and over', '% Black', '% Asian',
+                    '% Native Hawaiian/Other Pacific Islander', '% Hispanic',
+                    '% Non-Hispanic White', '% Rural', '% Fair or Poor Health',
+                    '% Smokers', '% Adults with Obesity', 'Food Environment Index',
+                    'Primary Care Physicians Ratio', '% Vaccinated', '% Some College',
+                    '% Severe Housing Problems', 'ColumnAmountNO2',
+                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index']</code>
+                    <br>
+                    <br>
+
+                    After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
+
+                    <h5> Future Work </h5>
+                    <br>
+                    In the future, we will explore more complex models besides LSTM, collect more data to reduce the amount of missing data, and perhaps design and deploy our websites in a more sophisticated manner such as using React.js to make the website dynamic. We might also create a pipeline to automatically collect satellite and coronavirus data for each day, update the database and improve the model’s accuracy. For the time being, we hope that our map is a valuable resource for the government and communities, as they can use it as a guide to determine how resources should be best deployed to save lives while maintaining normalcy where possible.
+                  </p>
+                </div>
+
+                <!-- Optional figure if needed -->
+                <!-- <div class = "col-sm mt-1 ml-1">
+                  <div class = "hideme">
+                    <figure class = "figure">
+                      <img src = "" class = "word-chart img-fluid fadeIn">
+                    </figure>
+                  </div>
+                </div> -->
               </div>
             </div>
           </section>
@@ -359,105 +452,6 @@
           </section>
           
 
-          
-
-          <section class = "section border-t" id = method>
-            <div class = "container">
-              <div class = "row ">
-                
-                <div class = "col-lg text-left mt-1 ml-1 text-center">
-                  <h3 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Methodology <br></h3>
-                  <br>
-                  <br>
-                  <figure class = "figure">
-                    <img src = "workflow_chart_total.png" class = "img-fluid fadeIn">
-                    <figcaption class="figure-caption text-center"> A flowchart depicting data sources and our process of creating the model and the interactive choropleth. Steps containing data from NASA/JAXA and other space agencies are filled in green, while boxes using data only from non-NASA data sources are filled in blue.. </figcaption>
-                  </figure>
-
-
-
-
-                  <br>
-                  <br>
-                  <br>
-                  <p class>
-
-
-                    Our first major task was to process NASA, JAXA, and other open source data containing measurements regarding temperature, precipitation, night light radiance, etc. across a collection of portals and file formats (h5, hd5, he5, tiff, csv).
-                    Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
-                    <br>
-                    <br>
-                    After merging the data together, it was "cleaned" by filling in all missing values with the "next available data."
-                    Following the data cleaning process, it was split into training and evaluation/testing subsets (80% and 20%, respectively).
-                    Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
-
-                    The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
-
-                    This "hot spot index" is a number that we, as a team, defined, aiming to characterize into the infectivity, lethality, and overall spread of the virus.
-
-                    The hotspot index for a county is defined as follows:
-                    <br>
-                    <br>
-                    HotSpot Index = ln ((IR) * 0.003 + (MR) * 0.003 + GP * 0.002 + ln(C + 1) * 0.002 + 1))
-                    <br>
-                    <br>
-                    IR = Incidence rate (cases per 100,000 people)
-                    <br>
-                    MR = Mortality Rate (Deaths in county / Population in county)
-                    <br>
-                    GP = Growth Percentage (New cases / Past total cases)
-                    <br>
-                    C = Total Confirmed Cases up to Yesterday
-
-                    <br>
-                    <br>
-                    Where 0.003, 0.002, and 1 are hard-coded inputs to the model.
-
-                    A Long Short Term Memory (LSTM) model from Tensorflow was then used to train and test the model.
-
-                    Below is a list of all the features used to train our model:
-                    <br>
-                    <br>
-                    <code>['FIPS', 'Confirmed', 'Deaths', 'Population', 'IncidenceRate',
-                    'NewCases', 'MortalityRate', 'LST_Day', 'LST_Night',
-                    'Mask Mandates', 'Stay-at-Home Orders', 'Travel Restrictions',
-                    'Precipitation', 'UV Index',
-                    'retail_and_recreation_percent_change_from_baseline',
-                    'grocery_and_pharmacy_percent_change_from_baseline',
-                    'parks_percent_change_from_baseline',
-                    'transit_stations_percent_change_from_baseline',
-                    'workplaces_percent_change_from_baseline',
-                    'residential_percent_change_from_baseline', 'Life Expectancy',
-                    '% Adults with Diabetes', '% Uninsured.1',
-                    'Median Household Income', '% 65 and over', '% Black', '% Asian',
-                    '% Native Hawaiian/Other Pacific Islander', '% Hispanic',
-                    '% Non-Hispanic White', '% Rural', '% Fair or Poor Health',
-                    '% Smokers', '% Adults with Obesity', 'Food Environment Index',
-                    'Primary Care Physicians Ratio', '% Vaccinated', '% Some College',
-                    '% Severe Housing Problems', 'ColumnAmountNO2',
-                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index']</code>
-                    <br>
-                    <br>
-
-                    After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
-
-                    <h5> Future Work </h5>
-                    <br>
-                    In the future, we will explore more complex models besides LSTM, collect more data to reduce the amount of missing data, and perhaps design and deploy our websites in a more sophisticated manner such as using React.js to make the website dynamic. We might also create a pipeline to automatically collect satellite and coronavirus data for each day, update the database and improve the model’s accuracy. For the time being, we hope that our map is a valuable resource for the government and communities, as they can use it as a guide to determine how resources should be best deployed to save lives while maintaining normalcy where possible.
-                  </p>
-                </div>
-
-                <!-- Optional figure if needed -->
-                <!-- <div class = "col-sm mt-1 ml-1">
-                  <div class = "hideme">
-                    <figure class = "figure">
-                      <img src = "" class = "word-chart img-fluid fadeIn">
-                    </figure>
-                  </div>
-                </div> -->
-              </div>
-            </div>
-          </section>
 
           <section class = "section border-t">
             <div class = "row_contact text-center">
