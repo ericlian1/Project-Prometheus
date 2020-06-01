@@ -345,9 +345,9 @@
                     Following the data cleaning process, the data was split into training and evaluation/testing subsets (80% and 20%, respectively).
                     Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
 
-                    The model was then specified to utilize the previous week's worth (seven days) of input to predict the next day's "hot spot index".
+                    The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
 
-                    This value is a number that we, as a team, defined, aiming to provide insight into the infectivity, lethality, and overall spread of the virus.
+                    This "hot spot index" is a number that we, as a team, defined, aiming to characterize into the infectivity, lethality, and overall spread of the virus.
 
                     The hotspot index for a county is defined as follows:
                     <br>
@@ -359,7 +359,7 @@
                     <br>
                     MR = Mortality Rate (Deaths in county / Population in county)
                     <br>
-                    GP = Growth Percentage (New cases / Yesterday's total cases)
+                    GP = Growth Percentage (New cases / Past total cases)
                     <br>
                     C = Total Confirmed Cases up to Yesterday
 
@@ -449,7 +449,7 @@
 
                   <figure class = "figure">
                     <!-- If not working, turn off any adblockers and/or try using a different browser -->
-                    <iframe height="200%" class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
+                    <iframe height="200%" width = auto class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
                     <figcaption class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</figcaption>
                   </figure>
                 </div>
@@ -544,14 +544,16 @@
                   Long Short Term Memory Machine Learning Model
                 </div>
                 <div class="col-md-3 col_fact">
-                  <div class = "num">5</div>
-                  % Average Error Rate for one day Prediction
+                  <div class = "num">6.275</div>
+                  % Training Error using the past two weeks data to predict a week in advance
+                </div>
+
+                <div class="col-md-3 col_fact">
+                  <div class = "num">9.923</div>
+                  % Evaluation Error using the past two weeks data to predict a week in advance
                   <!-- Java, Python, C++, C, SQL, GoLang, MATLAB, R -->
                 </div>
-                <div class="col-md-3 col_fact">
-                  <div class = "num">5</div>
-                  Group Members
-                </div>
+                
                 
               </div>  
             </div>
@@ -579,14 +581,14 @@
                 <br>
                 <img src = "static/images/sky_photo.jfif" class = "circular--square">
                 <br> <br>
-                <a href = ""https://www.linkedin.com/in/sky-chen-bb1623171/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+                <a href = "https://www.linkedin.com/in/sky-chen-bb1623171/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
               </div>
               <div class="col">
                 <h5>Solomon</h5>
                 <br>
                 <img src = "static/images/solomon.jpg" class = "circular--square">
                 <br> <br>
-                <a href = "https://www.linkedin.com/in/alexander-hsia" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
+                <a href = "https://www.linkedin.com/in/solomon-chang-161b2b178/" class="fab fa-linkedin-in fa-2x" style = "text-decoration:none"></a>
               </div>
               <div class="col">
                 <h5>Gabe</h5>
