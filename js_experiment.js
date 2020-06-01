@@ -123,6 +123,7 @@ legend.onAdd = function(map) {
 }
 
 legend.addTo(mymap);
+
 //CODE THAT CAN BE USED TO SAVE JSON FILE IF NECESSARY
 // function saveText(text, filename) {
 //     var a = document.createElement('a');

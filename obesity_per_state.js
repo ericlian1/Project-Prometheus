@@ -5,10 +5,10 @@
 //</div> 
 ///////////////////////////////////////////////////////////////////
 
-var mymap = L.map('health-interactive-map').setView([39.0119, -98.4842], 4);
+var my_map = L.map('health-interactive-map').setView([39.0119, -98.4842], 4);
 var mapboxAccessToken = 'pk.eyJ1IjoiZ2dhcmZpbmsiLCJhIjoiY2thc25uOGVvMDBydTJxbjQ1YnFiZ3lnMCJ9.9sEk0vjedqQplRO3bx-L8w';
 var covid_deaths;
-var geoJSON;
+var geoJSON1;
 var graph_sections = [2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20];
 
 function getColor(d) {
@@ -24,7 +24,7 @@ function getColor(d) {
                        ca[0];
 }
 
-function style(feature) {
+function style1(feature) {
     return {
         fillColor: getColor(feature.properties.diabetes),
         weight: .5,
@@ -54,10 +54,10 @@ function resetHighlight(e) {
 }
 
 function onClickSettings(e) {
-    mymap.fitBounds(e.target.getBounds().pad(2.5));
+    my_map.fitBounds(e.target.getBounds().pad(2.5));
 }
 
-function onEachFeature(feature, layer) {
+function onEachFeature1(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
@@ -111,28 +111,29 @@ for (var j = 0; j < county_data.features.length; ++j) {
 
 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + mapboxAccessToken, {
     maxZoom: 20,
-    id: 'mapbox/light-v9',
+    id: 'mapbox/light-v10',
     tileSize: 512,
     zoomOffset: -1,
-    stroke: false
-}).addTo(mymap);
+    stroke: false,
+    interactive: true
+}).addTo(my_map);
 
-geoJSON = L.geoJSON(county_data, {
-    style:style,
-    onEachFeature: onEachFeature
-}).addTo(mymap);
+geoJSON1 = L.geoJSON(county_data, {
+    style:style1,
+    onEachFeature: onEachFeature1
+}).addTo(my_map);
 
-var myStyle = {
-    "opacity": 0.5,
-    "interactive": false,
-    "weight": 3,
-    "fillOpacity": 0,
-    "color": '#000000'
-};
+// var myStyle = {
+//     "opacity": 0.5,
+//     "interactive": false,
+//     "weight": 3,
+//     "fillOpacity": 0,
+//     "color": '#000000'
+// };
 
-L.geoJSON(state_data, {
-    style: myStyle
-}).addTo(mymap);
+// L.geoJSON(state_data, {
+//     style: myStyle
+// }).addTo(my_map);
 
 
 //this creates the legend for the graph
@@ -150,4 +151,4 @@ health_legend.onAdd = function(map) {
     return div;
 }
 
-health_legend.addTo(mymap);
+health_legend.addTo(my_map);
