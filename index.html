@@ -49,7 +49,7 @@
           <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
             <!-- Currently sticky option is off, to have sticky option: sticky-top -->
 
-            <img src = "MRC.png" class = "img-fluid" style="width: 80px; height: 80px; border-radius: 40px; margin-right: 50px">
+            <img src = "static/images/MRC.png" class = "img-fluid" style="width: 80px; height: 80px; border-radius: 40px; margin-right: 50px">
             <a class="navbar-brand">
               <h1 ng-bind = "name"></h1>
             </a>   
@@ -102,13 +102,13 @@
             </li>
           </nav>
           
-          <section class = "section backcolorMist" id = "intro">
+          <section class = "section backcolorMist" id = "intro" style="background-image: url('static/images/MRC.png');background-size: cover;">
             <div class = "container">
               <!-- Introduction-->
-              <div class = "row" , style="background-image: url('static/images/MRC.png');background-size: cover;">
+              <div class = "row">
                 <div class = "col-lg">
                   <h2> Project Prometheus </h2>
-                  <p class = "text-left mt-1 ml-1">
+                  <p class = "text-left mt-1 ml-1" style="color: white">
 
                     The purpose of Project Prometheus is to predict the areas of the U.S. (and globally, in the future) which will be most affected by Coronavirus by utilizing machine learning tools.
                     By forecasting future severity rates (via our "Hotspot index"), it allows us to better balance government intervention and economic activity to minimize the negative impact to communities.
