@@ -22,6 +22,7 @@
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script> 
       </head>
+
     
       <div ng-app = "" ng-init = "name = 'MRC'" class="home">
         <body>
@@ -74,9 +75,9 @@
                     <div class = "dropdown-menu" aria-labelledby="dropdownMenu2">
                       <a class = "dropdown-item" href = "#env">Environment</a>
                       <a class = "dropdown-item" href = "#pollut">Pollution</a>
-                      <a class = "dropdown-item" href = "#dis">Disease</a>
-                      <a class = "dropdown-item" href = "#dem">Social</a>
-                      <a class = "dropdown-item" href = "#gov">Government</a>
+                      <a class = "dropdown-item" href = "#dis">Health</a>
+                      <a class = "dropdown-item" href = "#dem">Ethnicity and Communities</a>
+                      <a class = "dropdown-item" href = "#gov">Government Action</a>
                     </div>
                   </li>
       
@@ -204,14 +205,14 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Disease <br></h2>
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Health <br></h2>
 
                   <p class> 
 
-                    We also fed in historical number of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
+                    So far, the inputs to the machine learning model have been based on scientific observations/measurements. This section gathers statistics directly tied to health records including historical number of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
 
 
-                    We gathered this information via Johns Hopkins University's COVID-19 "USCounties_time" records.
+                  This information was collected by Johns Hopkins University's COVID-19 "USCounties_time" records.
 
                     <br>
                     <br>
@@ -235,9 +236,10 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Social <br></h2>
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Ethnicity and Communities <br></h2>
                   <p class> 
-                    
+
+                    It is a widely accepted fact that Coronavirus does not affect every community the same way.                    
                     Minorities, especially African-Americans, have an on-average higher death rate compared to other races.
                     “African American persons (92.3 deaths per 100,000 population) and Hispanic/Latino persons (74.3) that were substantially higher than that of white (45.2) or Asian (34.5) persons.”(IHME, 2020). 
                     This trend may be attributed to their living conditions and neighborhoods. As they tend to reside in more densely populated areas and are thus may be more susceptible to transmission, making it hard to social distance people from one another. 
@@ -276,19 +278,19 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government <br></h2>
-                  <p class>  States are slowly re-opening, with Georgia being one of the first.
-                    However, health officials are afraid that if we open the states up too quickly may undo everything everyone has done to flatten the curve. 
-                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restriction too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
-                    The economy is in a very tough shape right now causing many governors to overlook some of the criteria for reopening. 31 out of the 50 states have already begun to partially reopen, causing a resurgence in the total amounts of deaths due to Coronavirus. 
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government Action <br></h2>
+                  <p class>  In the U.S., States are slowly re-opening the economy, with Georgia being one of the first.
+                    However, health officials are afraid that opening up the states too quickly may result in a much-feared second or third wave of cases. 
+                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restrictions too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
+                    To minimize economic damage, many governors "overlook" some of the guidlines for reopening. 31 out of the 50 states have already begun to partially reopen the economy, causing a resurgence in deaths and infections from Coronavirus. 
 
-                    We sourced Government action data from multistate.us, which provides a COVID-19 Policy data at the state level.
+                    We sourced government action data from multistate.us, an organization which provides a COVID-19 Policy data at the state level.
 
                     <br>
                     <br>
 
                      
-                    Thus, government restrictions are an important input to the model.
+                    Thus, government action data are an important input to the model.
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
@@ -334,8 +336,8 @@
                     Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
                     <br>
                     <br>
-                    After merging the data together, the data was "cleaned" by filling in all missing values with the "next available data."
-                    Following the data cleaning process, the data was split into training and evaluation/testing subsets (80% and 20%, respectively).
+                    After merging the data together, it was "cleaned" by filling in all missing values with the "next available data."
+                    Following the data cleaning process, it was split into training and evaluation/testing subsets (80% and 20%, respectively).
                     Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
 
                     The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
@@ -431,7 +433,7 @@
                   </div>
                   <br>
                   <p>The above graph is based on the hotspot index, which describes how much of a hotspot
-                    the current location is based on our model. Note: Data above as of 05/27/2020.</p>
+                    the current location should be on 05/27/2020 (as this is based on data from 05/06/2020-05/20/2020).</p>
                   <br>
                   <br>
                   <br>
