@@ -113,9 +113,12 @@
               <!-- Introduction-->
               <div class = "row">
                 <div class = "col-lg">
-                  <h2> The World of Big Data </h2>
+                  <h2> Project Prometheus </h2>
                   <p class = "text-left mt-1 ml-1">
-                    The purpose of the Project Prometheus is to predict the areas most impacted by coronavirus in the future by utilizing machine learning with a collection of satellite and earth-based data.
+
+                    The purpose of Project Prometheus is to predict the areas of the U.S. (and globally, in the future) which will be most affected by Coronavirus by utilizing machine learning tools.
+                    By forecasting future severity rates (via our "Hotspot index"), it allows us to better balance government intervention and economic activity to minimize the negative impact to communities.
+                    <!-- The purpose of the Project Prometheus is to predict the areas most impacted by coronavirus in the future by utilizing machine learning with a collection of satellite and earth-based data. -->
                     </p>
                 </div>
               </div>               
@@ -129,12 +132,12 @@
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Environment <br></h2>
-                  <p class> Research done by scientists from China and from Harvard suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
-                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline when the temperature increases. (Xie, 2020).
-                    These results are particularly concerning, as many government officials plan on easing restrictions based on this false assumption. 
+                  <p class> Research done by scientists from China and Harvard University suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
+                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline of Coronavirus infection rates when the temperature increases. (Xie, 2020).
+                    These results are particularly concerning, as many governments plan to ease restrictions based on this false assumption. 
                     <br>
                     <br>
-                    As a result, one may hypothesize that that many may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
+                    Furthermore, one may hypothesize that people may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
                     
                     <br>
                     <br>
@@ -146,10 +149,10 @@
                     <br>
 
                     Global temperature and UV data was gathered from NASA's MODIS (Moderate Resolution Imaging Spectroradiometer) instrument web data portal.
-                    Global precipitation data was gathered by the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer). The data was collected from JAXA's G-Portal.
+                    Global precipitation data was sourced from the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer), made available on JAXA's G-Portal.
                     <br>
                     <br>
-                    Data for most days had missing data; this was handled by filling the data in with the next available time interval.
+                    In the advent of missing data, we filled missing values with data from the next available time interval.
                   
                   </p>
                 </div>
@@ -178,12 +181,7 @@
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Pollution <br></h2>
                   <p class> 
-                      As Coronavirus has spread, there has also been an observable decrease in pollution due to reduced human activity (e.g less commuters on the road and less people going to work).
-
-                      However, as states and regions relax restrictions and social distancing, human activity increases, resulting in more pollution.
-
-                      NO2, or Nitrogen Dioxide, is a common byproduct of industrial activity that is hazerdous to human health. As a result, it can provide a fairly accurate measure of industrial activity.
-
+                     It is a worldwide observation that pollution corresponds positively with economic activity (due to factories and transportation). NO2, or nitrogen dioxide, is a common byproduct of industrial activity which is also harmful to human health.
                       Areas with higher levels of pollution often also have a greater percentage of the population with preexisting conditions, increasing Coronavirus' severity/lethality.
                       As a result, NO2 is a good metric for estimating economic activity and measuring the susceptibility of populations in certain regions to Coronavirus.
                       <br>
