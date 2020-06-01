@@ -116,7 +116,7 @@ legend.onAdd = function(map) {
 
     for (var i = 0; i < levels.length; ++i) {
         div.innerHTML +=
-            '<i style="background:' + getColor(levels[i] + 1) + '"></i> ' +
+            '<i style="background:' + getColor(levels[i] + .25) + '"></i> ' +
             levels[i] + (levels[i + 1] ? '&ndash;' + levels[i + 1] + '<br>' : '+');
     }
     return div;
