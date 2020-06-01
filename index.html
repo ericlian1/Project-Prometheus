@@ -349,7 +349,7 @@
                     The hotspot index for a county is defined as follows:
                     <br>
                     <br>
-                    HotSpot Index = ln ((IR) * 0.004 + (MR) * 0.004 + GP * C * 0.001 + 1)
+                    HotSpot Index = ln ((IR) * 0.003 + (MR) * 0.003 + GP * 0.002 + ln(C + 1) * 0.002 + 1))
                     <br>
                     <br>
                     IR = Incidence rate (cases per 100,000 people)
@@ -362,7 +362,7 @@
 
                     <br>
                     <br>
-                    Where 0.004, 0.001, and 1 are hard-coded inputs to the model.
+                    Where 0.003, 0.002, and 1 are hard-coded inputs to the model.
 
                     A Long Short Term Memory (LSTM) model from Tensorflow was then used to train and test the model.
 
