@@ -22,6 +22,7 @@
         integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
         crossorigin=""></script> 
       </head>
+
     
       <div ng-app = "" ng-init = "name = 'MRC'" class="home">
         <body>
@@ -47,6 +48,8 @@
           <!-- Navbar -->
           <nav class="navbar navbar-expand-sm ml-auto sticky-top bottomBorderRedgrad backcolorWhite">
             <!-- Currently sticky option is off, to have sticky option: sticky-top -->
+
+            <img src = "MRC.png" class = "img-fluid" style="width: 80px; height: 80px; border-radius: 40px; margin-right: 50px">
             <a class="navbar-brand">
               <h1 ng-bind = "name"></h1>
             </a>   
@@ -72,9 +75,9 @@
                     <div class = "dropdown-menu" aria-labelledby="dropdownMenu2">
                       <a class = "dropdown-item" href = "#env">Environment</a>
                       <a class = "dropdown-item" href = "#pollut">Pollution</a>
-                      <a class = "dropdown-item" href = "#dis">Disease</a>
-                      <a class = "dropdown-item" href = "#dem">Social</a>
-                      <a class = "dropdown-item" href = "#gov">Government</a>
+                      <a class = "dropdown-item" href = "#dis">Health</a>
+                      <a class = "dropdown-item" href = "#dem">Ethnicity and Communities</a>
+                      <a class = "dropdown-item" href = "#gov">Government Action</a>
                     </div>
                   </li>
       
@@ -98,11 +101,6 @@
               </div>
             </li>
           </nav>
-
-          
-          <section class = "section-no-padding">
-            <img src = "MRC.png" class = "wideimg img-fluid fadeIn">
-          </section>
           
           <section class = "section backcolorMist" id = "intro">
             <div class = "container">
@@ -113,9 +111,12 @@
               <!-- Introduction-->
               <div class = "row">
                 <div class = "col-lg">
-                  <h2> The World of Big Data </h2>
+                  <h2> Project Prometheus </h2>
                   <p class = "text-left mt-1 ml-1">
-                    The purpose of the Project Prometheus is to predict the areas most impacted by coronavirus in the future by utilizing machine learning with a collection of satellite and earth-based data.
+
+                    The purpose of Project Prometheus is to predict the areas of the U.S. (and globally, in the future) which will be most affected by Coronavirus by utilizing machine learning tools.
+                    By forecasting future severity rates (via our "Hotspot index"), it allows us to better balance government intervention and economic activity to minimize the negative impact to communities.
+                    <!-- The purpose of the Project Prometheus is to predict the areas most impacted by coronavirus in the future by utilizing machine learning with a collection of satellite and earth-based data. -->
                     </p>
                 </div>
               </div>               
@@ -129,12 +130,12 @@
                 
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Environment <br></h2>
-                  <p class> Research done by scientists from China and from Harvard suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
-                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline when the temperature increases. (Xie, 2020).
-                    These results are particularly concerning, as many government officials plan on easing restrictions based on this false assumption. 
+                  <p class> Research done by scientists from China and Harvard University suggest that warmer weather does not halt transmission of the virus, contrary to popular belief. (Powell, 2020).
+                    Utilizing meteorological factors of 122 cities, they concluded that there is no evidence of decline of Coronavirus infection rates when the temperature increases. (Xie, 2020).
+                    These results are particularly concerning, as many governments plan to ease restrictions based on this false assumption. 
                     <br>
                     <br>
-                    As a result, one may hypothesize that that many may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
+                    Furthermore, one may hypothesize that people may rely on this false assumption to guide their decision-making, resulting in "warmer areas" having more relaxed policies/behaviors and less social distancing. 
                     
                     <br>
                     <br>
@@ -146,10 +147,10 @@
                     <br>
 
                     Global temperature and UV data was gathered from NASA's MODIS (Moderate Resolution Imaging Spectroradiometer) instrument web data portal.
-                    Global precipitation data was gathered by the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer). The data was collected from JAXA's G-Portal.
+                    Global precipitation data was sourced from the Japanese Aerospace Exploration Agency (JAXA) GCOM-W1 (Global Change Observation Mission) Shizuku's AMSR2 (Advanced Microwave Scanning Radiometer), made available on JAXA's G-Portal.
                     <br>
                     <br>
-                    Data for most days had missing data; this was handled by filling the data in with the next available time interval.
+                    In the advent of missing data, we filled missing values with data from the next available time interval.
                   
                   </p>
                 </div>
@@ -178,12 +179,7 @@
                 <div class = "col-lg text-left mt-1 ml-1">
                   <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Pollution <br></h2>
                   <p class> 
-                      As Coronavirus has spread, there has also been an observable decrease in pollution due to reduced human activity (e.g less commuters on the road and less people going to work).
-
-                      However, as states and regions relax restrictions and social distancing, human activity increases, resulting in more pollution.
-
-                      NO2, or Nitrogen Dioxide, is a common byproduct of industrial activity that is hazerdous to human health. As a result, it can provide a fairly accurate measure of industrial activity.
-
+                     It is a worldwide observation that pollution corresponds positively with economic activity (due to factories and transportation). NO2, or nitrogen dioxide, is a common byproduct of industrial activity which is also harmful to human health.
                       Areas with higher levels of pollution often also have a greater percentage of the population with preexisting conditions, increasing Coronavirus' severity/lethality.
                       As a result, NO2 is a good metric for estimating economic activity and measuring the susceptibility of populations in certain regions to Coronavirus.
                       <br>
@@ -209,14 +205,14 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Disease <br></h2>
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Health <br></h2>
 
                   <p class> 
 
-                    We also fed in historical number of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
+                    So far, the inputs to the machine learning model have been based on scientific observations/measurements. This section gathers statistics directly tied to health records including historical number of cases, deaths, incidence rate, new cases, and population per county into the model. This data is important because it provides a historic/near-present trajectory of the number of cases and deaths.
 
 
-                    We gathered this information via Johns Hopkins University's COVID-19 "USCounties_time" records.
+                  This information was collected by Johns Hopkins University's COVID-19 "USCounties_time" records.
 
                     <br>
                     <br>
@@ -227,7 +223,7 @@
                 <div class = "col-sm mt-1 ml-1">
                   <div class = "hideme">
                     <figure class = "figure">
-                      <img src = "Teamlogo.png" class = "word-chart img-fluid fadeIn">
+                      <img src = "static/images/diabetes.png" class = "img-fluid fadeIn">
                     </figure>
                   </div>
                 </div>                  
@@ -240,9 +236,10 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Social <br></h2>
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Ethnicity and Communities <br></h2>
                   <p class> 
-                    
+
+                    It is a widely accepted fact that Coronavirus does not affect every community the same way.                    
                     Minorities, especially African-Americans, have an on-average higher death rate compared to other races.
                     “African American persons (92.3 deaths per 100,000 population) and Hispanic/Latino persons (74.3) that were substantially higher than that of white (45.2) or Asian (34.5) persons.”(IHME, 2020). 
                     This trend may be attributed to their living conditions and neighborhoods. As they tend to reside in more densely populated areas and are thus may be more susceptible to transmission, making it hard to social distance people from one another. 
@@ -281,27 +278,28 @@
               <div class = "row ">
                 
                 <div class = "col-lg text-left mt-1 ml-1">
-                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government <br></h2>
-                  <p class>  States are slowly re-opening, with Georgia being one of the first.
-                    However, health officials are afraid that if we open the states up too quickly may undo everything everyone has done to flatten the curve. 
-                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restriction too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
-                    The economy is in a very tough shape right now causing many governors to overlook some of the criteria for reopening. 31 out of the 50 states have already begun to partially reopen, causing a resurgence in the total amounts of deaths due to Coronavirus. 
+                  <h2 style='width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;'> Government Action <br></h2>
+                  <p class>  In the U.S., States are slowly re-opening the economy, with Georgia being one of the first.
+                    However, health officials are afraid that opening up the states too quickly may result in a much-feared second or third wave of cases. 
+                    A good case study is Japan. Their initial rigorous restrictions kept their number of cases low. However, after lifting the restrictions too quickly they were forced to shut down a second time due to a second wave of coronavirus cases. (Leonard, 2020).
+                    To minimize economic damage, many governors "overlook" some of the guidlines for reopening. 31 out of the 50 states have already begun to partially reopen the economy, causing a resurgence in deaths and infections from Coronavirus. 
 
-                    We sourced Government action data from multistate.us, which provides a COVID-19 Policy data at the state level.
+                    We sourced government action data from multistate.us, an organization which provides a COVID-19 Policy data at the state level.
 
                     <br>
                     <br>
 
                      
-                    Thus, government restrictions are an important input to the model.
+                    Thus, government action data are an important input to the model.
                   </p>
                 </div>
                 <div class = "col-sm mt-1 ml-1">
                   <div class = "hideme">
                     <figure class = "figure">
-                      <img src = "open.png" style="width:66%; height:66%;"> 
-                      <br>
-                      <img src = "status.png" style="width:66%; height:66%;">
+                      <img src = "Open.png" style="width:80%; height:80%;" class = "img-fluid fadeIn"> 
+                      <figcaption class="figure-caption text-center"> Figure depicting states open/closed/restrictions. </figcaption>
+                      <!-- <br> -->
+                      <!-- <img src = "Status.png" style="width:66%; height:66%;" class = "img-fluid fadeIn"> -->
                     </figure>
                   </div>
                 </div>                  
@@ -338,8 +336,8 @@
                     Once the data was read in with Python, we merged the different data frames into a single, standardized Pandas Dataframe, containing 40+ features.
                     <br>
                     <br>
-                    After merging the data together, the data was "cleaned" by filling in all missing values with the "next available data."
-                    Following the data cleaning process, the data was split into training and evaluation/testing subsets (80% and 20%, respectively).
+                    After merging the data together, it was "cleaned" by filling in all missing values with the "next available data."
+                    Following the data cleaning process, it was split into training and evaluation/testing subsets (80% and 20%, respectively).
                     Next, hyperparameters for the model such as the training batch size and number of epoxes (number of times the model iterates through the dataset) were set.
 
                     The model was then specified to utilize the previous two week's worth (seven days) of input to predict a day's "hot spot index," a week into the future.
@@ -386,18 +384,15 @@
                     '% Smokers', '% Adults with Obesity', 'Food Environment Index',
                     'Primary Care Physicians Ratio', '% Vaccinated', '% Some College',
                     '% Severe Housing Problems', 'ColumnAmountNO2',
-                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index',
-                    'Hotspot Index_rank']</code>
+                    'ColumnAmountNO2CloudScreened', 'Night Light', 'Hotspot Index']</code>
                     <br>
                     <br>
 
                     After generating the model's predictions, we plotted the values on LeafletJS to generate the interactive Choropleth map.
 
-                    <h5> Applications & Future Work </h5>
+                    <h5> Future Work </h5>
                     <br>
-                    
-                    The Choropleth offers exciting applications and insight into the propagation of Coronavirus. 
-                    Our hope is that the predictions of hot spot indices from the LSTM machine learning model
+                    In the future, we will explore more complex models besides LSTM, collect more data to reduce the amount of missing data, and perhaps design and deploy our websites in a more sophisticated manner such as using React.js to make the website dynamic. We might also create a pipeline to automatically collect satellite and coronavirus data for each day, update the database and improve the model’s accuracy. For the time being, we hope that our map is a valuable resource for the government and communities, as they can use it as a guide to determine how resources should be best deployed to save lives while maintaining normalcy where possible.
                   </p>
                 </div>
 
@@ -435,7 +430,7 @@
                   </div>
                   <br>
                   <p>The above graph is based on the hotspot index, which describes how much of a hotspot
-                    the current location is based on our model. Note: Data above as of 05/27/2020.</p>
+                    the current location should be on 05/27/2020 (as this is based on data from 05/06/2020-05/20/2020).</p>
                   <br>
                   <br>
                   <br>
@@ -448,8 +443,17 @@
 
                   <figure class = "figure">
                     <!-- If not working, turn off any adblockers and/or try using a different browser -->
-                    <iframe height="200%" width = auto class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
+                    <iframe height=400px width = auto class = "img-fluid" src="https://human.biodigital.com/viewer?id=production/maleAdult/coronavirus_structure&ui-chapter-list=true&ui-label-list=true&ui-fullscreen=false&ui-all=true&ui-search=false&load-rotate=1&ui-tools=false&ui-info=false&uaid=5ggxg"></iframe>
                     <figcaption class="figure-caption text-center"> Interactive 3D model of Coronavirus. Note: This model was sourced from Biodigital.</figcaption>
+                  </figure>
+                  
+                  <figure class = "figure">
+                    <img src = "static/images/pert_14_7_single.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> This pie chart shows the perturbation effect for each of the feature as a percentage of the total sum of effects. The perturbation is done by adding each feature to a random distribution between 0 and 0.2. The higher the percentage, the higher the error will increase when the feature is perturbed, which might imply more importance to the model's prediction.</figcaption>
+                  </figure>
+                  <figure class = "figure">
+                    <img src = "static/images/perm_14_7_single.png" class = "img-fluid fadeIn">
+                    <figcaption class="figure-caption text-center"> This pie chart shows the permutation effect for each of the feature as a percentage of the toal sum of effects. The permutation is done by randomly shuffling each feature. The higher the percentage, the higher the error will increase when the feature is permuted, which might imply more importance to the model's prediction.</figcaption>
                   </figure>
                 </div>
               </div>
